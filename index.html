@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Alex's Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -11,7 +12,96 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+      <h1>Welcome To Tic Tac Toe</h1>
+      <h2>Let's Have Some Fun!</h2>
+
+      <section id="before-sign-in">
+
+        <!-- Sign up form goes here-->
+
+        <form id="sign-up" class="border">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+
+            <button class="btn btn-primary">Sign Up!</button>
+          </fieldset>
+        </form>
+
+        <!-- Sign in form goes here-->
+
+        <form id="sign-in" class="border">
+          <fieldset>
+            <legend>Sign In</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+
+            <button class="btn btn-primary">Sign In!</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- We only want this section to be visible after we sign in.
+           By default it should not be displayed. -->
+      <section id="after-sign-in">
+
+          <form id="sign-out" class="border">
+            <fieldset>
+              <legend>Sign Out</legend>
+
+              <button class="btn btn-primary">Sign Out</button>
+            </fieldset>
+          </form>
+        </section>
+
+      <!-- NEW GAME Button -->
+      <section id="new-game-button">
+
+        <form id="new-game" class="border">
+          <fieldset>
+            <legend>New Game</legend>
+            <button class="btn btn-primary">New Game</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- create a section for our user feedback -->
+      <section>
+        <div id="error-message"></div>
+        <div id="login-display"></div>
+      </section>
+
+      <!----------Game Board------------>
+      <section class="container">
+        <h1>Tic Tac Toe</h1>
+
+        <div class="players">
+          <h4 class="playerX">Player X</h4>
+          <h4 class="playerO">Player O</h4>
+        </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-4 box">1</div>
+              <div class="col-4 box">2</div>
+              <div class="col-4 box">3</div>
+              <div class="col-4 box">4</div>
+              <div class="col-4 box">5</div>
+              <div class="col-4 box">6</div>
+              <div class="col-4 box">7</div>
+              <div class="col-4 box">8</div>
+              <div class="col-4 box">9</div>
+            </div>
+          </div>
+
+          <!-- <button class="new-game-btn" id="new-game-btn">New Game</button> -->
+          <!-- <button class="logout-btn" id="logout-btn">Logout</button> -->
+
+      </section>
     </body>
 </html>
+
