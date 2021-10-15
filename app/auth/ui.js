@@ -16,6 +16,10 @@ const signUpSuccess = function (responseData) {
   // clear (reset) all of the forms
   $('form').trigger('reset')
 
+  $('#after-sign-in').hide()
+  $('#before-sign-in').show()
+  //$('#game-board').hide()
+
   console.log('responseData is', responseData)
 }
 
@@ -26,6 +30,10 @@ const signUpFailure = function (error) {
   // remove existing classes, then add a red text-danger class from bootstrap
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
+
+  $('#after-sign-in').hide()
+  $('#before-sign-in').show()
+  //$('#game-board').show()
 
   // print the error
   console.error('error is', error)
@@ -64,13 +72,16 @@ const signInFailure = function (error) {
   $('#error-message').removeClass()
   $('#error-message').addClass('text-danger')
 
+  $('#after-sign-in').hide()
+  $('#before-sign-in').show()
+
   // print the error
   console.error('error is', error)
 }
 
 const signOutSuccess = function (responseData) {
     // tell the user it was successful
-    $('#login-display').text('Signed Out Successfully, Good Bye')
+    $('#login-display').text('Signed Out Successfully, Good Bye!')
 
     // remove existing classes, then add a green text-success class from bootstrap
     $('#login-display').removeClass()
@@ -83,6 +94,7 @@ const signOutSuccess = function (responseData) {
     $('#after-sign-in').hide()
     $('#before-sign-in').show()
 
+
     console.log('responseData is', responseData)
   }
 
@@ -94,11 +106,15 @@ const signOutSuccess = function (responseData) {
     $('#error-message').removeClass()
     $('#error-message').addClass('text-danger')
 
+    $('#after-sign-in').hide()
+    $('#before-sign-in').show()
+
+
     // print the error
     console.error('error is', error)
   }
 
-  // NEW GAME RESET BUTTON
+  //------- NEW GAME RESET BUTTON---------
 
   const newGameSuccess = function (responseData) {
     // tell the user it was successful
@@ -126,10 +142,12 @@ const signOutSuccess = function (responseData) {
     $('#error-message').removeClass()
     $('#error-message').addClass('text-danger')
 
+    $('#after-sign-in').hide()
+    $('#before-sign-in').show()
+
     // print the error
     console.error('error is', error)
   }
-
 
 
 module.exports = {
@@ -140,5 +158,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
 }

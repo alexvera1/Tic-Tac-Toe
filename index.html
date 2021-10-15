@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Alex's Tic Tac Toe</title>
+      <title>Alex's Tic Tac Toe Game</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -15,11 +14,12 @@
 
     <body>
       <h1>Welcome To Tic Tac Toe</h1>
-      <h2>Let's Have Some Fun!</h2>
+      <h2>Let's Play!</h2>
 
-      <section id="before-sign-in">
 
         <!-- Sign up form goes here-->
+
+        <section id="before-sign-in">
 
         <form id="sign-up" class="border">
           <fieldset>
@@ -45,6 +45,7 @@
         </form>
       </section>
 
+
       <!-- We only want this section to be visible after we sign in.
            By default it should not be displayed. -->
       <section id="after-sign-in">
@@ -58,13 +59,12 @@
           </form>
         </section>
 
-      <!-- NEW GAME Button -->
-      <section id="new-game-button">
-
+      <!-- NEW GAME BUTTON -->
+      <section >
         <form id="new-game" class="border">
           <fieldset>
             <legend>New Game</legend>
-            <button class="btn btn-primary">New Game</button>
+            <button class="btn btn-primary" id="new-game-button">New Game</button>
           </fieldset>
         </form>
       </section>
@@ -76,32 +76,21 @@
       </section>
 
       <!----------Game Board------------>
-      <section class="container">
-        <h1>Tic Tac Toe</h1>
+      <section class="game-board" style="display">
 
-        <div class="players">
-          <h4 class="playerX">Player X</h4>
-          <h4 class="playerO">Player O</h4>
+        <h1 class="game-title">Tic Tac Toe</h1>
+        <div class="game-container">
+            <div id="1" data-cell-index="1" class="cell"></div>
+            <div id="2" data-cell-index="2" class="cell"></div>
+            <div id="3" data-cell-index="3" class="cell"></div>
+            <div id="4" data-cell-index="4" class="cell"></div>
+            <div id="5" data-cell-index="5" class="cell"></div>
+            <div id="6" data-cell-index="6" class="cell"></div>
+            <div id="7" data-cell-index="7" class="cell"></div>
+            <div id="8" data-cell-index="8" class="cell"></div>
+            <div id="9" data-cell-index="9" class="cell"></div>
         </div>
-
-          <div class="container">
-            <div class="row">
-              <div class="col-4 box">1</div>
-              <div class="col-4 box">2</div>
-              <div class="col-4 box">3</div>
-              <div class="col-4 box">4</div>
-              <div class="col-4 box">5</div>
-              <div class="col-4 box">6</div>
-              <div class="col-4 box">7</div>
-              <div class="col-4 box">8</div>
-              <div class="col-4 box">9</div>
-            </div>
-          </div>
-
-          <!-- <button class="new-game-btn" id="new-game-btn">New Game</button> -->
-          <!-- <button class="logout-btn" id="logout-btn">Logout</button> -->
-
-      </section>
-    </body>
+        <h2 class="game-status"></h2>
+    </section>
+  </body>
 </html>
-

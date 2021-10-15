@@ -79,12 +79,18 @@ const onSignOut = function (event) {
       .catch(ui.newGameFailure)
   }
 
+ 
 
-// export our event handler functions, so we can use them
-// in app.js
+
+  // ---------Game Logic--------------
+
+
+
+//export our event handler functions, so we can use them
+//in app.js
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onNewGame
+  onNewGame,
 }

@@ -31,7 +31,7 @@ const signIn = function (formData) {
 }
 
 const signOut = function (formData) {
-  // make a request to PATCH /change-password
+  // make a request to DELETE /sing-out
   return $.ajax({
     url: `${config.apiUrl}/sign-out`,
     method: 'DELETE',
@@ -47,9 +47,9 @@ const signOut = function (formData) {
 }
 
 const newGame = function (formData) {
-  // make a request to PATCH /change-password
+  // make a request to POST /create new game
   return $.ajax({
-    url: `${config.apiUrl}/new-game`,
+    url: `${config.apiUrl}/games`,
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token,
@@ -63,9 +63,10 @@ const newGame = function (formData) {
 }
 
 
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  newGame
+  newGame,
 }
