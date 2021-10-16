@@ -23,23 +23,52 @@ let currentPlayer = "x"
 //    }
 //  }
 
- const cellClick = (event) => {
-  $(event.currentTarget).text(currentPlayer); {
-    if (currentPlayer === "x") {
-      currentPlayer = "o";
-    } else if (currentPlayer === "o") {
-      currentPlayer = "x";
-    } else {
-      console.log('Cell not available')
-    }
-  }
-
+//  const cellClick = (event) => {
+//   $(event.currentTarget).text(currentPlayer); {
+//     // if (currentPlayer === "x" || currentPlayer === "o") {
+//     //   console.log('Cell not available')
+//     if (currentPlayer === "x") {
+//       currentPlayer = "o";
+//     } else if (currentPlayer === "o") {
+//       currentPlayer = "x";
+//     }
+//   }
 
 //  // check if the current player is "X"
 //  //if so, set currentPlayer to be "O"
 //  // Otherwise, set current player to "X"
 
+//}
+
+//  This function only allows the function called playerChooses to click on a cell if the cell is empty
+const cellClick = (event) => {
+  if ($(event.currentTarget).text() === "") {
+    playerChooses(event)
+  }
+
+//  $(event.currentTarget).text(currentPlayer); {
+//    if (currentPlayer === "x") {
+//      currentPlayer = "o";
+//    } else if (currentPlayer === "o") {
+//      currentPlayer = "x";
+//    }
+//  }
 }
+
+
+//  setts inner text within the cell and alternating between x and o
+const playerChooses = (event) => {
+$(event.currentTarget).text(currentPlayer); {
+  if (currentPlayer === "x") {
+    currentPlayer = "o";
+  } else if (currentPlayer === "o") {
+    currentPlayer = "x";
+  }
+}
+}
+
+
+
 
 
 module.exports = {
