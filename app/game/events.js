@@ -33,11 +33,7 @@
 let currentPlayer = "x"
 
 //  This function only allows the function called playerChooses to click on a cell if the cell is empty
-const cellClick = (event) => {
-  if ($(event.currentTarget).text() === "") {
-    playerChooses(event)
-  }
-}
+
 //  $(event.currentTarget).text(currentPlayer); {
 //    if (currentPlayer === "x") {
 //      currentPlayer = "o";
@@ -47,7 +43,7 @@ const cellClick = (event) => {
 //  }
 
 let grid = ["", "", "", "", "", "", "", "", ""];
-//  setts inner text within the cell and alternating between x and o
+//  sets inner text within the cell and alternating between x and o
 const playerChooses = (event) => {
 const index = Number(event.currentTarget.id) -1
 grid[index] = currentPlayer
@@ -61,6 +57,8 @@ $(event.currentTarget).text(currentPlayer)
   }
 }
 
+
+// WINNING CONDITIONS
 const checkWin = () => {
   let testArray = [grid[0], grid[1], grid[2]]
   const check1 = testArray.every((square) => {
@@ -95,11 +93,54 @@ const checkWin = () => {
     return square === currentPlayer
   })
     if (check1 || check2 || check3 || check4 || check5 || check6 || check7 || check8) {
+      $(".game-status").text(winningMessage())
+      gameGoing = false
       console.log(`Congradulations ${currentPlayer} Wins`)
     }
 }
 
-//const winningMessage = () => `Player ${currentPlayer} has won!`;
+// variable you can check if the game is happing
+let gameGoing = true
+
+const cellClick = (event) => {
+  // only let clicks happen when the game is going
+  if (gameGoing) {
+    if ($(event.currentTarget).text() === "") {
+      playerChooses(event)
+    }
+  }
+}
+
+const winningMessage = () => `Player ${currentPlayer} has won!`;
+console.log(winningMessage())
+
+
+// ----- NEW GAME BUTTON -------
+
+const newGameSuccess = function (responseData) {
+
+  $(".cell").text("")
+  $(".game-status").text("")
+
+  console.log('responseData is', responseData)
+}
+
+const newGameFailure = function (error) {
+  // tell the user it was failure
+  $('#error-message').text('Reset Failed')
+
+  // remove existing classes, then add a red text-danger class from bootstrap
+  $('#error-message').removeClass()
+  $('#error-message').addClass('text-danger')
+
+  $('#after-sign-in').hide()
+  $('#before-sign-in').show()
+
+  // print the error
+  console.error('error is', error)
+}
+
+
 
 // const winningConditions = [
 //     [0, 1, 2],
@@ -117,4 +158,7 @@ const checkWin = () => {
 
 module.exports = {
   cellClick,
+  newGameSuccess,
+  newGameFailure
+
 }

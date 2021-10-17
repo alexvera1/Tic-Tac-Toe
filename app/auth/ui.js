@@ -116,38 +116,28 @@ const signOutSuccess = function (responseData) {
 
   //------- NEW GAME RESET BUTTON---------
 
-  const newGameSuccess = function (responseData) {
-    // tell the user it was successful
-    $('#login-display').text('New Game Started Success')
+  // const newGameSuccess = function (responseData) {
 
-    // remove existing classes, then add a green text-success class from bootstrap
-    $('#login-display').removeClass()
-    $('#login-display').addClass('text-success')
+  //   $(".cell").text("")
+  //   $(".game-status").text("")
 
-    // clear (reset) all of the forms
-    $('form').trigger('reset')
+  //   console.log('responseData is', responseData)
+  // }
 
-    // After we sign in, show the section with the id `after-sign-in`
-    $('#after-sign-in').hide()
-    $('#before-sign-in').show()
+  // const newGameFailure = function (error) {
+  //   // tell the user it was failure
+  //   $('#error-message').text('Reset Failed')
 
-    console.log('responseData is', responseData)
-  }
+  //   // remove existing classes, then add a red text-danger class from bootstrap
+  //   $('#error-message').removeClass()
+  //   $('#error-message').addClass('text-danger')
 
-  const newGameFailure = function (error) {
-    // tell the user it was failure
-    $('#error-message').text('Reset Failed')
+  //   $('#after-sign-in').hide()
+  //   $('#before-sign-in').show()
 
-    // remove existing classes, then add a red text-danger class from bootstrap
-    $('#error-message').removeClass()
-    $('#error-message').addClass('text-danger')
-
-    $('#after-sign-in').hide()
-    $('#before-sign-in').show()
-
-    // print the error
-    console.error('error is', error)
-  }
+  //   // print the error
+  //   console.error('error is', error)
+  // }
 
 
 module.exports = {
@@ -157,6 +147,6 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
-  newGameSuccess,
-  newGameFailure,
+  // newGameSuccess,
+  // newGameFailure,
 }
