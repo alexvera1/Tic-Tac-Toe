@@ -60,7 +60,7 @@ const signInSuccess = function (responseData) {
   $('#before-sign-in').hide()
   // After we sign in, show the section with the id `after-sign-in`
   $('#after-sign-in').show()
-
+  $('.game-board').removeClass("hide")
   console.log('responseData is', responseData)
 }
 
@@ -93,8 +93,9 @@ const signOutSuccess = function (responseData) {
     // After we sign in, show the section with the id `after-sign-in`
     $('#after-sign-in').hide()
     $('#before-sign-in').show()
-
-
+    $('.game-board').addClass("hide")
+    $(".cell").text("")
+    $(".game-status").text("")
     console.log('responseData is', responseData)
   }
 
@@ -114,30 +115,6 @@ const signOutSuccess = function (responseData) {
     console.error('error is', error)
   }
 
-  //------- NEW GAME RESET BUTTON---------
-
-  // const newGameSuccess = function (responseData) {
-
-  //   $(".cell").text("")
-  //   $(".game-status").text("")
-
-  //   console.log('responseData is', responseData)
-  // }
-
-  // const newGameFailure = function (error) {
-  //   // tell the user it was failure
-  //   $('#error-message').text('Reset Failed')
-
-  //   // remove existing classes, then add a red text-danger class from bootstrap
-  //   $('#error-message').removeClass()
-  //   $('#error-message').addClass('text-danger')
-
-  //   $('#after-sign-in').hide()
-  //   $('#before-sign-in').show()
-
-  //   // print the error
-  //   console.error('error is', error)
-  // }
 
 
 module.exports = {
@@ -147,6 +124,4 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
-  // newGameSuccess,
-  // newGameFailure,
 }

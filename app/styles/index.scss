@@ -83,11 +83,13 @@ section {
   border: 2px solid white;
 }
 
-.game-board {
-  display: default;
+// .game-board {
+//   display: default;
+// }
+
+.hide {
+  display: none;
 }
-
-
 
 // select section with ID after-sign-in
 //make it not display on page to start with
