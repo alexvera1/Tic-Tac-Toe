@@ -29,16 +29,16 @@ As a user, I want to create a personal account with email and password. As a use
 
 
 ## Technologies used
-*HTML
-*CSS
-*JavaScript
-*Bootstrap
-*jQuery
-*AJAX
-*GitHub
-*Visual Studio Code
-*API
-*JSON
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+* jQuery
+* AJAX
+* GitHub
+* Visual Studio Code
+* API
+* JSON
 
 
 ## Wireframes
