@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Alex's Tic Tac Toe Game</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <h1>Welcome To Tic Tac Toe</h1>
+      <h2>Let's Play!</h2>
+
+
+        <!-- Sign up form goes here-->
+
+        <section id="before-sign-in">
+
+        <form id="sign-up" class="border">
+          <fieldset>
+            <legend>Sign Up</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+
+            <button class="btn btn-primary">Sign Up!</button>
+          </fieldset>
+        </form>
+
+        <!-- Sign in form goes here-->
+
+        <form id="sign-in" class="border">
+          <fieldset>
+            <legend>Sign In</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+
+            <button class="btn btn-primary">Sign In!</button>
+          </fieldset>
+        </form>
+      </section>
+
+
+      <!-- We only want this section to be visible after we sign in.
+           By default it should not be displayed. -->
+      <section id="after-sign-in">
+
+          <form id="sign-out" class="border">
+            <fieldset>
+              <legend>Sign Out</legend>
+
+              <button class="btn btn-primary">Sign Out</button>
+            </fieldset>
+          </form>
+        </section>
+
+      <!-- NEW GAME BUTTON -->
+      <section >
+        <form id="new-game" class="border">
+          <fieldset>
+            <legend>New Game</legend>
+            <button class="btn btn-primary" id="new-game-button">New Game</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- create a section for our user feedback -->
+      <section>
+        <div id="error-message"></div>
+        <div id="login-display"></div>
+      </section>
+
+      <!----------Game Board------------>
+      <section class="game-board hide">
+
+        <h1 class="game-title">Tic Tac Toe</h1>
+        <div class="game-container">
+            <div id="1" data-cell-index="1" class="cell"></div>
+            <div id="2" data-cell-index="2" class="cell"></div>
+            <div id="3" data-cell-index="3" class="cell"></div>
+            <div id="4" data-cell-index="4" class="cell"></div>
+            <div id="5" data-cell-index="5" class="cell"></div>
+            <div id="6" data-cell-index="6" class="cell"></div>
+            <div id="7" data-cell-index="7" class="cell"></div>
+            <div id="8" data-cell-index="8" class="cell"></div>
+            <div id="9"  data-cell-index="9" class="cell"></div>
+        </div>
+        <h2 class="game-status"></h2>
+    </section>
+  </body>
+</html>

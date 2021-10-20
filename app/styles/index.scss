@@ -1,0 +1,82 @@
+@import '~bootstrap/scss/bootstrap';
+
+// sign up forms styles
+
+.border {
+  border: 10px solid black;
+  margin: 20px;
+  padding: 20px;
+  color:black;
+}
+
+// /* CSS Styles for Game Board */
+
+body {
+  background-color: #c9ada7 ;
+  text-align: center;
+  padding-left: 50px ;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+h1{
+  color:#11213a;
+  font-family: "Permanent Marker";
+  font-weight: bold;
+}
+
+h2 {
+  color:#11213a;
+  font-family: "Permanent Marker";
+  font-weight: bold;
+}
+
+
+
+section {
+  text-align: center;
+}
+
+.game-title {
+  font-size: 50px;
+  color: 11213a;
+  margin: 10px auto;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 306px;
+  margin: 10px auto;
+  background-color: #11213a;
+  color: #04c0b2;
+}
+
+.cell {
+  font-family: "Permanent Marker", cursive;
+  width: 100px;
+  height: 100px;
+  box-shadow: 2px 2px 2px 2px #ecd7ba;
+  border: 2px solid white;
+  cursor: pointer;
+  line-height: 100px;
+  font-size: 60px;
+}
+
+.game-status {
+  font-size: 50px;
+  color: #11213a;
+  margin: 20px auto;
+}
+
+
+.hide {
+  display: none;
+}
+
+// select section with ID after-sign-in
+//make it not display on page to start with
+#after-sign-in {
+display: none;
+}
