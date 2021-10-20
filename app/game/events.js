@@ -1,36 +1,12 @@
 
-
-
-
-
-// const boxClick = (event) => {
-//  $(event.currentTarget).text(currentPlayer); {
-//    if (currentPlayer === "x") {
-//      currentPlayer = "o";
-//    } else if (currentPlayer === "o") {
-//      currentPlayer = "x";
-//    }
-//  }
-
-//  const cellClick = (event) => {
-//   $(event.currentTarget).text(currentPlayer); {
-//     // if (currentPlayer === "x" || currentPlayer === "o") {
-//     //   console.log('Cell not available')
-//     if (currentPlayer === "x") {
-//       currentPlayer = "o";
-//     } else if (currentPlayer === "o") {
-//       currentPlayer = "x";
-//     }
-//   }
-
 //  // check if the current player is "X"
 //  //if so, set currentPlayer to be "O"
 //  // Otherwise, set current player to "X"
 
-//}
 
 
 let currentPlayer = "x"
+
 
 //  This function only allows the function called playerChooses to click on a cell if the cell is empty
 
@@ -99,7 +75,7 @@ const checkWin = () => {
     }
 }
 
-// variable you can check if the game is happing
+// variable you can check if the game is happening
 let gameGoing = true
 
 const cellClick = (event) => {

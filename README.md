@@ -1,128 +1,60 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+# Tic-Tac-Toe Game
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+## Description Overview
 
-## Installation
+I created this project for unit 1 of the Software Engineering Immersive at General Assembly.
+The game allows players to sign up for a user account with their email address and password, sign in to the gaming portal, and play rounds of tic-tac-toe.
 
-1. [Download](../../archive/main.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `sei/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-main.zip`.
-1. Rename the template directory from `browser-template-main` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace the `name` `seir-flex-831.browser-template` with the name of
-    your project in `package.json`.
-2. Move into the new project and `git init`.
-3. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-4. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-5. Install dependencies with `npm install`.
-6. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-7. Name the new repository with the same name used on Step 3.
-8. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled **"…or push an existing
-   repository from the command line."** Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
-   > **Note:** This last step will rename your default branch to **main**. This branch name will be used when deploying.
-
-## Structure
-
-### App
-
-Developers should store JavaScript files in [`app`](app).
-The "manifest" or entry-point is
-[`app/app.js`](app/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`app/config.js`](app/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`app/styles`](app/styles) and load them
-from [`app/styles/index.scss`](app/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys main branch
+The game is played by placing X's and O's in the grid with nine individual square. X goes first and turns are alternated between player X and player O. The players can win across (rows), vertically (columns), diagonally or counter diagonally. To win a round, the player has to have three of their mark in a column, row, or diagonal.  When a winning condition is reached, the plyer is noticed X wins or 0 Wins. You start a new game or sign out. 
 
 
-## Additional Resources
+## Important Links
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
 
-## [License](LICENSE)
+##  Planning
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+One of the resources that helped guide the planning of this project was the Suggested Schedule. This provided a framework and time line to tackle the project step by step.  Initially I created a wireframe to visualize what the sign up/sign in view and the game board views would like and begin building it out from there.
+
+I started out with a simple sign up form where the user could create an account with a user name and password and sign in to the gaming portal and start a new game. Next, I created the gaming view with a standard grid with 9 spaces. The game logic and functionality was needed to make the game interactive and playable. This was accomplished by incorporating winning conditions using Javascript,user input with jQuery and data storage using API calls. Game status messaging was implemented to let users know the winning player, a tie, when they have successfully signed in, successfully signed out, or if there was a failure in sign up/sign in. 
+
+To style the game, I used css to target the elements in HTML with classes and id's. I kept the styling simple but I did use various colors, fonts, and font sizes to add creativity and unique style to my game.
+
+Throughout the development stages of this project I referenced various sources of information to strengthen my knowledge base and figure out how to approach building this application.  These sources include the user and gaming documentation, Chrome Developer Tools, resources provided in class, appointments with TA's, collaborating and discussing issues with students and instructors.
+
+## User Stories
+
+As a user, I want to create a personal account with email and password. As a user, I want to be able to play again when the current game is over. As a user, I want to know who won: X or O. As a user, I want to be able to sign out. As a user, I want to be able to start a new game. As a user, I want a game interface that is fun and easy to use. 
+
+
+## Technologies used
+HTML
+CSS
+JavaScript
+Bootstrap
+jQuery
+AJAX
+GitHub
+Visual Studio Code
+APIs
+JSON
+
+
+## Wireframes
+![Tic Tac Toe Wireframe](https://imgur.com/WJl9LKV)
+
+
+## Resources
+[Link to game-project-api] (https://git.generalassemb.ly/seir-flex-831/game-project-api/blob/master/docs/game.d#update-request-body)
+
+[Link to game-project-styling-guide] (https://git.generalassemb.ly/ga-wdi-boston/game-project-styling-guide)
+
+[Link to styling video] (https://drive.google.com/file/d/1v7iHsx5T2owSHBxeeK6IRyjje0lN3YtR/view)
+
+[Link to User Documentation] (https://git.generalassemb.ly/seir-flex-831/game-project-api/blob/master/docs/user.md)
+
+[Link to Gaming Documentation] (https://git.generalassemb.ly/seir-flex-831/game-project-api/blob/master/docs/game.md)
+
+[Link to Coolers] (https://coolors.co/palettes/trending)
+
+[Link to markdown-study] (https://git.generalassemb.ly/seir-flex-831/markdown-study/blob/solution/study.md)
