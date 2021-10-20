@@ -1,7 +1,7 @@
 
-# Tic-Tac-Toe Game
+# Tic Tac Toe Project
 
-## Description Overview
+## Overview
 
 I created this project for unit 1 of the Software Engineering Immersive at General Assembly.
 The game allows players to sign up for a user account with their email address and password, sign in to the gaming portal, and play rounds of tic-tac-toe.
@@ -11,6 +11,7 @@ The game is played by placing X's and O's in the grid with nine individual squar
 
 ## Important Links
 
+https://alexvera1.github.io/Tic-Tac-Toe/
 
 ##  Planning
 
@@ -28,20 +29,20 @@ As a user, I want to create a personal account with email and password. As a use
 
 
 ## Technologies used
-HTML
-CSS
-JavaScript
-Bootstrap
-jQuery
-AJAX
-GitHub
-Visual Studio Code
-APIs
-JSON
+*HTML
+*CSS
+*JavaScript
+*Bootstrap
+*jQuery
+*AJAX
+*GitHub
+*Visual Studio Code
+*API
+*JSON
 
 
 ## Wireframes
-![Tic Tac Toe Wireframe](https://imgur.com/WJl9LKV)
+![Wireframe] (https://imgur.com/WJl9LKV)
 
 
 ## Resources
