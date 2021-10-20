@@ -65,10 +65,7 @@ const onSignOut = function (event) {
     // prevent the default action of refreshing the page
     event.preventDefault()
 
-    // // event.target is the form that caused the 'submit' event
-    // const form = event.target
-    // // get the data from our form element
-    // const formData = getFormFields(form)
+  
 
     // make a POST /sign-in request, pass it the email/password/confirmation
     api

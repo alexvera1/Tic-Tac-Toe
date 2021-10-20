@@ -37,11 +37,7 @@ const signOut = function (formData) {
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token,
-    // make sure to send the formData along as the body of our request
-    // this is similar to --data in the curl script
-    //data: formData,
-    // Add our authorization header, so the api can use the token
-    // to know who is trying to change the password
+
     }
     })
 }
@@ -53,11 +49,6 @@ const newGame = function (formData) {
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token,
-    // make sure to send the formData along as the body of our request
-    // this is similar to --data in the curl script
-    //data: formData,
-    // Add our authorization header, so the api can use the token
-    // to know who is trying to change the password
     }
     })
 }
