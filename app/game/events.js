@@ -1,3 +1,4 @@
+const api = require('../auth/api')
 
 //  // check if the current player is "X"
 //  //if so, set currentPlayer to be "O"
@@ -6,6 +7,8 @@
 
 
 let currentPlayer = "x"
+let turnCount = 0
+
 
 
 //  This function only allows the function called playerChooses to click on a cell if the cell is empty
@@ -25,12 +28,14 @@ const index = Number(event.currentTarget.id) -1
 grid[index] = currentPlayer
 console.log(grid)
 $(event.currentTarget).text(currentPlayer)
+  turnCount++
   checkWin()
   if (currentPlayer === "x") {
     currentPlayer = "o";
   } else if (currentPlayer === "o") {
     currentPlayer = "x";
   }
+  console.log(turnCount)
 }
 
 
@@ -68,11 +73,16 @@ const checkWin = () => {
   const check8 = testArray.every((square) => {
     return square === currentPlayer
   })
+
     if (check1 || check2 || check3 || check4 || check5 || check6 || check7 || check8) {
       $(".game-status").text(winningMessage())
       gameGoing = false
       console.log(`Congradulations ${currentPlayer} Wins`)
     }
+    if (turnCount >=9) {
+      $(".game-status").text("It's a Tie!")
+    }
+
 }
 
 // variable you can check if the game is happening
@@ -91,31 +101,60 @@ const winningMessage = () => `Player ${currentPlayer} has won!`;
 console.log(winningMessage())
 
 
-// ----- NEW GAME BUTTON -------
+// // ----- NEW GAME BUTTON -------
 
-const newGameSuccess = function (responseData) {
+// const newGameSuccess = function (e) {
+//   e.preventDefault()
+//   api.onNewGame()
+//   // $(".cell").text("")
+//   // $(".game-status").text("")
 
-  $(".cell").text("")
-  $(".game-status").text("")
+//   // console.log('responseData is', responseData)
+// }
 
-  console.log('responseData is', responseData)
+// const newGameFailure = function (error) {
+//   // tell the user it was failure
+//   $('#error-message').text('Reset Failed')
+
+//   // remove existing classes, then add a red text-danger class from bootstrap
+//   $('#error-message').removeClass()
+//   $('#error-message').addClass('text-danger')
+
+//   $('#after-sign-in').hide()
+//   $('#before-sign-in').show()
+
+//   // print the error
+//   console.error('error is', error)
+// }
+
+
+const onNewGame = function (event) {
+  // prevent the default action of refreshing the page
+  event.preventDefault()
+
+
+
+  // make a POST /sign-in request, pass it the email/password/confirmation
+  api
+    .newGame()
+  // if our sign in request is successful, run the signUpSuccess function
+    .then(newGameSuccess)
+  // otherwise, if an error occurred, run a signInFailure function
+    .catch(newGameFailure)
 }
 
-const newGameFailure = function (error) {
-  // tell the user it was failure
-  $('#error-message').text('Reset Failed')
-
-  // remove existing classes, then add a red text-danger class from bootstrap
-  $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
-
-  $('#after-sign-in').hide()
-  $('#before-sign-in').show()
-
-  // print the error
-  console.error('error is', error)
+const newGameSuccess = function () {
+// in your newGameSuccess function
+// reset the turn count
+// reset the gameBoard array
+// reset the the currentPlayer
+// reset each div in the html
 }
 
+const newGameFailure = function () {
+// in your newGameFailure function
+// show the user a message that the newGame has failed
+}
 
 
 // const winningConditions = [
@@ -129,12 +168,9 @@ const newGameFailure = function (error) {
 //     [2, 4, 6]
 // ];
 
-
-
-
 module.exports = {
   cellClick,
   newGameSuccess,
-  newGameFailure
-
+  newGameFailure,
+  onNewGame
 }

@@ -12,7 +12,7 @@ $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#new-game-button').on('click', gameEvents.newGameSuccess)
+  $('#new-game-button').on('click', gameEvents.onNewGame)
 
   // Box Clicks Event Listener
   $('#1').on('click',gameEvents.cellClick)

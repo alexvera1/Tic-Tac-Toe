@@ -52,10 +52,6 @@ As a user, I want to create a personal account with email and password. As a use
 
 [Link to styling video] (https://drive.google.com/file/d/1v7iHsx5T2owSHBxeeK6IRyjje0lN3YtR/view)
 
-[Link to User Documentation] (https://git.generalassemb.ly/seir-flex-831/game-project-api/blob/master/docs/user.md)
-
-[Link to Gaming Documentation] (https://git.generalassemb.ly/seir-flex-831/game-project-api/blob/master/docs/game.md)
-
 [Link to Coolers] (https://coolors.co/palettes/trending)
 
 [Link to markdown-study] (https://git.generalassemb.ly/seir-flex-831/markdown-study/blob/solution/study.md)
